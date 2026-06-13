@@ -1,13 +1,16 @@
 from __future__ import annotations
 
+import logging
+import os
 import time
 from pathlib import Path
 
+import base64
 import pytest
-from playwright.sync_api import Browser, BrowserContext, Page
+from playwright.sync_api import Page
+from pytest_html import extras
 
 from config.settings import (
-    BASE_URL,
     DATA_DIR,
     DEFAULT_TIMEOUT_MS,
     EXCEL_FILE,
@@ -17,7 +20,14 @@ from config.settings import (
     SCREENSHOTS_DIR,
 )
 from utils.excel_reader import ExcelReader, create_sample_excel
-from utils.report_generator import ReportGenerator, TestResult
+from utils.report_generator import ReportGenerator, TestResult, TestStep
+
+
+def pytest_configure(config: pytest.Config) -> None:
+    logging.basicConfig(
+        level=logging.INFO,
+        format="%(asctime)s [%(levelname)s] %(name)s: %(message)s",
+    )
 
 
 @pytest.fixture(scope="session")
@@ -32,7 +42,10 @@ def browser_context_args(browser_context_args: dict) -> dict:
 
 
 @pytest.fixture(scope="session")
-def browser_type_launch_args(browser_type_launch_args: dict, pytestconfig: pytest.Config) -> dict:
+def browser_type_launch_args(
+    browser_type_launch_args: dict,
+    pytestconfig: pytest.Config,
+) -> dict:
     return {
         **browser_type_launch_args,
         "headless": not pytestconfig.getoption("--headed"),
@@ -79,7 +92,26 @@ def cleartrip_page(page: Page) -> Page:
 
 
 @pytest.fixture
-def record_test_result(request: pytest.FixtureRequest, execution_report: ReportGenerator):
+def step_logger():
+    steps: list[TestStep] = []
+
+    def _log(step_name: str, status: str, message: str) -> None:
+        steps.append(
+            TestStep(
+                step_name=step_name,
+                status=status,
+                message=message,
+            )
+        )
+
+    return steps, _log
+
+
+@pytest.fixture
+def record_test_result(
+    request: pytest.FixtureRequest,
+    execution_report: ReportGenerator,
+):
     started_at = time.time()
 
     def _record(
@@ -90,6 +122,7 @@ def record_test_result(request: pytest.FixtureRequest, execution_report: ReportG
         journey_type: str,
         status: str,
         message: str,
+        steps: list[TestStep] | None = None,
         screenshot_path: str = "",
     ) -> None:
         result = TestResult(
@@ -101,8 +134,34 @@ def record_test_result(request: pytest.FixtureRequest, execution_report: ReportG
             duration_seconds=round(time.time() - started_at, 2),
             message=message,
             screenshot_path=screenshot_path,
+            steps=steps or [],
         )
         execution_report.add_result(result)
         request.config._execution_report = execution_report  # type: ignore[attr-defined]
 
     return _record
+
+
+@pytest.hookimpl(hookwrapper=True)
+def pytest_runtest_makereport(item, call):
+    outcome = yield
+    report = outcome.get_result()
+
+    if report.when == "call":
+        extras_list = getattr(report, "extras", [])
+
+        screenshot = getattr(item, "screenshot", None)
+        log_info = getattr(item, "log_info", None)
+
+        if screenshot and os.path.exists(screenshot):
+            with open(screenshot, "rb") as image_file:
+                encoded_image = base64.b64encode(
+                    image_file.read()
+                ).decode("utf-8")
+
+            extras_list.append(extras.png(encoded_image))
+
+        if log_info:
+            extras_list.append(extras.text(log_info))
+
+        report.extras = extras_list

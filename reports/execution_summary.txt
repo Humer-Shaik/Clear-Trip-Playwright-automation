@@ -1,14 +1,29 @@
 ============================================================
-CLEARTrip FLIGHT SEARCH - EXECUTION SUMMARY
+CLEARTRIP FLIGHT SEARCH - EXECUTION SUMMARY
 ============================================================
-Generated At : 2026-06-13T11:45:00
+Generated At : 2026-06-13T14:31:15
 Total Tests  : 3
 Passed       : 3
 Failed       : 0
 Skipped      : 0
 Pass Rate    : 100.0%
 ------------------------------------------------------------
-[PASSED] TC001 | Mumbai -> Delhi | 18.0s | Verified results at https://www.cleartrip.com/flights/results?adults=1&childs=0&infants=0&class=Economy&depart_date=20/06/2026&from=BOM&to=DEL&intl=n&origin=BOM%20-%20Mumbai,%20IN&destination=DEL%20-%20New%20Delhi,%20IN&sft=&sd=1781331259373&rnd_one=O&isCfw=false&nonStop=&isFF=false | Airline: Air India | Price: Up to ₹600 off
-[PASSED] TC002 | Bengaluru -> Goa | 18.5s | Verified results at https://www.cleartrip.com/flights/results?adults=1&childs=0&infants=0&class=Economy&depart_date=23/06/2026&from=BLR&to=GOI&intl=n&origin=BLR%20-%20Bengaluru,%20IN&destination=GOI%20-%20Goa,%20IN&sft=&sd=1781331276240&rnd_one=O&isCfw=false&nonStop=&isFF=false | Airline: Air India | Price: Up to ₹600 off
-[PASSED] TC003 | Chennai -> Hyderabad | 10.5s | Verified results at https://www.cleartrip.com/flights/results?adults=1&childs=0&infants=0&class=Economy&depart_date=27/06/2026&from=MAA&to=HYD&intl=n&origin=MAA%20-%20Chennai,%20IN&destination=HYD%20-%20Hyderabad,%20IN&sft=&sd=1781331295074&rnd_one=O&isCfw=false&nonStop=&isFF=false | Airline: Air India | Price: Up to ₹600 off
+[PASSED] TC001 | Mumbai -> Delhi | 15.1s | Verified results at https://www.cleartrip.com/flights/results?adults=1&childs=0&infants=0&class=Economy&depart_date=20/06/2026&from=BOM&to=DEL&intl=n&origin=BOM%20-%20Mumbai,%20IN&destination=DEL%20-%20New%20Delhi,%20IN&sft=&sd=1781341242090&rnd_one=O&isCfw=false&nonStop=&isFF=false | Airline: Air India | Price: Up to ₹600 off
+   -> [PASSED] Search flights using Cleartrip flow | Flight search completed for Mumbai to Delhi
+   -> [PASSED] Validate airline name is visible | Airline visible: Air India
+   -> [PASSED] Validate flight price is visible | Price visible: Up to ₹600 off
+   -> [PASSED] Validate price format | Price format valid: Up to ₹600 off
+   -> [PASSED] Capture screenshot | Screenshot saved at /Users/hannushaik/Downloads/Clear Trip/reports/screenshots/TC001.png
+[PASSED] TC002 | Bengaluru -> Goa | 10.8s | Verified results at https://www.cleartrip.com/flights/results?adults=1&childs=0&infants=0&class=Economy&depart_date=23/06/2026&from=BLR&to=GOI&intl=n&origin=BLR%20-%20Bengaluru,%20IN&destination=GOI%20-%20Goa,%20IN&sft=&sd=1781341257807&rnd_one=O&isCfw=false&nonStop=&isFF=false | Airline: Air India | Price: Up to ₹600 off
+   -> [PASSED] Search flights using Cleartrip flow | Flight search completed for Bengaluru to Goa
+   -> [PASSED] Validate airline name is visible | Airline visible: Air India
+   -> [PASSED] Validate flight price is visible | Price visible: Up to ₹600 off
+   -> [PASSED] Validate price format | Price format valid: Up to ₹600 off
+   -> [PASSED] Capture screenshot | Screenshot saved at /Users/hannushaik/Downloads/Clear Trip/reports/screenshots/TC002.png
+[PASSED] TC003 | Chennai -> Hyderabad | 13.3s | Verified results at https://www.cleartrip.com/flights/results?adults=1&childs=0&infants=0&class=Economy&depart_date=27/06/2026&from=MAA&to=HYD&intl=n&origin=MAA%20-%20Chennai,%20IN&destination=HYD%20-%20Hyderabad,%20IN&sft=&sd=1781341270221&rnd_one=O&isCfw=false&nonStop=&isFF=false | Airline: Air India | Price: Up to ₹600 off
+   -> [PASSED] Search flights using Cleartrip flow | Flight search completed for Chennai to Hyderabad
+   -> [PASSED] Validate airline name is visible | Airline visible: Air India
+   -> [PASSED] Validate flight price is visible | Price visible: Up to ₹600 off
+   -> [PASSED] Validate price format | Price format valid: Up to ₹600 off
+   -> [PASSED] Capture screenshot | Screenshot saved at /Users/hannushaik/Downloads/Clear Trip/reports/screenshots/TC003.png
 ============================================================

@@ -5,7 +5,7 @@
     "failed": 0,
     "skipped": 0,
     "pass_rate": 100.0,
-    "generated_at": "2026-06-13T11:45:00"
+    "generated_at": "2026-06-13T14:31:15"
   },
   "results": [
     {
@@ -14,10 +14,37 @@
       "to_city": "Delhi",
       "journey_type": "One Way",
       "status": "PASSED",
-      "duration_seconds": 18.03,
-      "message": "Verified results at https://www.cleartrip.com/flights/results?adults=1&childs=0&infants=0&class=Economy&depart_date=20/06/2026&from=BOM&to=DEL&intl=n&origin=BOM%20-%20Mumbai,%20IN&destination=DEL%20-%20New%20Delhi,%20IN&sft=&sd=1781331259373&rnd_one=O&isCfw=false&nonStop=&isFF=false | Airline: Air India | Price: Up to \u20b9600 off",
-      "screenshot_path": "",
-      "timestamp": "2026-06-13T11:44:30"
+      "duration_seconds": 15.06,
+      "message": "Verified results at https://www.cleartrip.com/flights/results?adults=1&childs=0&infants=0&class=Economy&depart_date=20/06/2026&from=BOM&to=DEL&intl=n&origin=BOM%20-%20Mumbai,%20IN&destination=DEL%20-%20New%20Delhi,%20IN&sft=&sd=1781341242090&rnd_one=O&isCfw=false&nonStop=&isFF=false | Airline: Air India | Price: Up to \u20b9600 off",
+      "screenshot_path": "/Users/hannushaik/Downloads/Clear Trip/reports/screenshots/TC001.png",
+      "steps": [
+        {
+          "step_name": "Search flights using Cleartrip flow",
+          "status": "PASSED",
+          "message": "Flight search completed for Mumbai to Delhi"
+        },
+        {
+          "step_name": "Validate airline name is visible",
+          "status": "PASSED",
+          "message": "Airline visible: Air India"
+        },
+        {
+          "step_name": "Validate flight price is visible",
+          "status": "PASSED",
+          "message": "Price visible: Up to \u20b9600 off"
+        },
+        {
+          "step_name": "Validate price format",
+          "status": "PASSED",
+          "message": "Price format valid: Up to \u20b9600 off"
+        },
+        {
+          "step_name": "Capture screenshot",
+          "status": "PASSED",
+          "message": "Screenshot saved at /Users/hannushaik/Downloads/Clear Trip/reports/screenshots/TC001.png"
+        }
+      ],
+      "timestamp": "2026-06-13T14:30:51"
     },
     {
       "test_id": "TC002",
@@ -25,10 +52,37 @@
       "to_city": "Goa",
       "journey_type": "One Way",
       "status": "PASSED",
-      "duration_seconds": 18.5,
-      "message": "Verified results at https://www.cleartrip.com/flights/results?adults=1&childs=0&infants=0&class=Economy&depart_date=23/06/2026&from=BLR&to=GOI&intl=n&origin=BLR%20-%20Bengaluru,%20IN&destination=GOI%20-%20Goa,%20IN&sft=&sd=1781331276240&rnd_one=O&isCfw=false&nonStop=&isFF=false | Airline: Air India | Price: Up to \u20b9600 off",
-      "screenshot_path": "",
-      "timestamp": "2026-06-13T11:44:49"
+      "duration_seconds": 10.79,
+      "message": "Verified results at https://www.cleartrip.com/flights/results?adults=1&childs=0&infants=0&class=Economy&depart_date=23/06/2026&from=BLR&to=GOI&intl=n&origin=BLR%20-%20Bengaluru,%20IN&destination=GOI%20-%20Goa,%20IN&sft=&sd=1781341257807&rnd_one=O&isCfw=false&nonStop=&isFF=false | Airline: Air India | Price: Up to \u20b9600 off",
+      "screenshot_path": "/Users/hannushaik/Downloads/Clear Trip/reports/screenshots/TC002.png",
+      "steps": [
+        {
+          "step_name": "Search flights using Cleartrip flow",
+          "status": "PASSED",
+          "message": "Flight search completed for Bengaluru to Goa"
+        },
+        {
+          "step_name": "Validate airline name is visible",
+          "status": "PASSED",
+          "message": "Airline visible: Air India"
+        },
+        {
+          "step_name": "Validate flight price is visible",
+          "status": "PASSED",
+          "message": "Price visible: Up to \u20b9600 off"
+        },
+        {
+          "step_name": "Validate price format",
+          "status": "PASSED",
+          "message": "Price format valid: Up to \u20b9600 off"
+        },
+        {
+          "step_name": "Capture screenshot",
+          "status": "PASSED",
+          "message": "Screenshot saved at /Users/hannushaik/Downloads/Clear Trip/reports/screenshots/TC002.png"
+        }
+      ],
+      "timestamp": "2026-06-13T14:31:02"
     },
     {
       "test_id": "TC003",
@@ -36,10 +90,37 @@
       "to_city": "Hyderabad",
       "journey_type": "One Way",
       "status": "PASSED",
-      "duration_seconds": 10.47,
-      "message": "Verified results at https://www.cleartrip.com/flights/results?adults=1&childs=0&infants=0&class=Economy&depart_date=27/06/2026&from=MAA&to=HYD&intl=n&origin=MAA%20-%20Chennai,%20IN&destination=HYD%20-%20Hyderabad,%20IN&sft=&sd=1781331295074&rnd_one=O&isCfw=false&nonStop=&isFF=false | Airline: Air India | Price: Up to \u20b9600 off",
-      "screenshot_path": "",
-      "timestamp": "2026-06-13T11:45:00"
+      "duration_seconds": 13.35,
+      "message": "Verified results at https://www.cleartrip.com/flights/results?adults=1&childs=0&infants=0&class=Economy&depart_date=27/06/2026&from=MAA&to=HYD&intl=n&origin=MAA%20-%20Chennai,%20IN&destination=HYD%20-%20Hyderabad,%20IN&sft=&sd=1781341270221&rnd_one=O&isCfw=false&nonStop=&isFF=false | Airline: Air India | Price: Up to \u20b9600 off",
+      "screenshot_path": "/Users/hannushaik/Downloads/Clear Trip/reports/screenshots/TC003.png",
+      "steps": [
+        {
+          "step_name": "Search flights using Cleartrip flow",
+          "status": "PASSED",
+          "message": "Flight search completed for Chennai to Hyderabad"
+        },
+        {
+          "step_name": "Validate airline name is visible",
+          "status": "PASSED",
+          "message": "Airline visible: Air India"
+        },
+        {
+          "step_name": "Validate flight price is visible",
+          "status": "PASSED",
+          "message": "Price visible: Up to \u20b9600 off"
+        },
+        {
+          "step_name": "Validate price format",
+          "status": "PASSED",
+          "message": "Price format valid: Up to \u20b9600 off"
+        },
+        {
+          "step_name": "Capture screenshot",
+          "status": "PASSED",
+          "message": "Screenshot saved at /Users/hannushaik/Downloads/Clear Trip/reports/screenshots/TC003.png"
+        }
+      ],
+      "timestamp": "2026-06-13T14:31:15"
     }
   ]
 }
